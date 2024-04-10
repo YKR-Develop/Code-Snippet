@@ -1,0 +1,44 @@
+/* ==================================================
+ _animation.scss
+ アニメーションスタイル 定義
+================================================== */
+@use "sass:math";
+@use "../config/variables" as *;
+@use "../config/function" as *;
+@use "../config/font" as *;
+
+/* ==================================================
+ animation基本設定
+================================================== */
+@mixin animation(
+	// アニメーションの全体的なデフォルト値を設定
+	$name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: normal,
+) {
+	// animation-〇〇のようなハイフン前の文言(animation)を定義しなくて済む
+  animation: {
+		// 各プロパティに上記で設定したデフォルト値の値を格納
+		name: $name;
+		duration: $duration;
+    timing-function: $timing-function;
+    delay: $delay;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+	}
+}
+
+/* ==================================================
+ ※以下は他scssファイルでの定義方法
+ @mixinで定義した引数のプロパティを書き換えるだけで個別にアニメーションを指定することができる
+ @include bounce(
+    $name: sk-bouncedelay;
+		$duration: 3s;
+		$timing-function: ease-in-out,
+  );
+================================================== */

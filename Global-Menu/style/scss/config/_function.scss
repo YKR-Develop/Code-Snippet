@@ -1,0 +1,24 @@
+/* ==================================================
+ _function.scss
+ 関数 定義
+================================================== */
+@use "sass:math";
+@use "./mq" as *;
+@use "./variables" as *;
+
+/* ==================================================
+ フォントのvw単位計算
+ ※定義方法
+ p {
+	font-size: responsiveFontSizeClamp(最小フォントサイズ,最大フォントサイズ,最小ウィンドウサイズ,最大ウィンドウサイズ);
+ }
+================================================== */
+@function responsiveFontSizeClamp($minFontSize, $maxFontSize, $minViewport, $maxViewport) {
+    $fontSizeRate: $maxFontSize - $minFontSize;
+    $viewportRate: $maxViewport - $minViewport;
+    $changingSize: math.div(math.round(math.div($fontSizeRate, $viewportRate) * 10000 ),100);
+    $fixedSize: math.div(math.round(($minFontSize - math.div($fontSizeRate, $viewportRate) * $minViewport) * 62.5), 1000);
+    $minRemFontSize: math.div(math.round($minFontSize * 62.5 ),1000);
+    $maxRemFontSize: math.div(math.round($maxFontSize * 62.5),1000);
+    @return clamp(#{$minRemFontSize}rem, #{$fixedSize}rem + #{$changingSize}vw, #{$maxRemFontSize}rem);
+}

@@ -1,0 +1,34 @@
+/* ==================================================
+ _font.scss
+ フォント・文字サイズ 定義
+================================================== */
+@use "sass:math";
+@use "./function" as *;
+@use "./variables" as *;
+
+/* ==================================================
+ 見出しフォントサイズ(spサイズ ~ pcサイズ)
+ h1: 24 ~ 28px;
+ h2: 20 ~ 24px;
+ h3: 18 ~ 20px;
+ h4: 16 ~ 18px;
+================================================== */
+$font_h1: responsiveFontSizeClamp(24,28,320,1280);
+$font_h2: responsiveFontSizeClamp(20,24,320,1280);
+$font_h3: responsiveFontSizeClamp(18,20,320,1280);
+$font_h4: responsiveFontSizeClamp(16,18,320,1280);
+
+
+/* ==================================================
+ フォントサイズ(spサイズ ~ pcサイズ)
+ x-small: 10 ~ 12px
+ small: 12 ~ 14px
+ medium: 14px ~ 16px
+ large: 16px ~ 18px
+ x-large: 18 ~ 20px 
+================================================== */
+$font_x-small: responsiveFontSizeClamp(10,12,320,1280);
+$font_small: responsiveFontSizeClamp(12,14,320,1280);
+$font_medium: responsiveFontSizeClamp(14,16,320,1280);
+$font_large: responsiveFontSizeClamp(16,18,320,1280);
+$font_x-large: responsiveFontSizeClamp(18,20,320,1280);

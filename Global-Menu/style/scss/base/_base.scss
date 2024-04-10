@@ -1,0 +1,62 @@
+/* ==================================================
+ _base.scss
+ 全ページ共通のタグスタイル 定義
+================================================== */
+@use "../config/variables" as *;
+@use "../config/font" as *;
+@use "../config/mq" as *;
+@use "../mixin/mixin" as *;
+
+/* ==================================================
+ タグ共通設定
+================================================== */
+html {
+	overflow-y:scroll;
+}
+
+body {
+	width: 100%;
+	box-sizing: border-box;
+	background-color: $color_base;
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+	overflow: hidden;
+	border: 0;
+}
+
+li {
+	list-style: none;
+}
+
+p {
+	line-height: 1.5;
+	letter-spacing: 0.1;
+	color: $color_black;
+}
+
+a {
+	text-decoration:none;
+}
+
+/* ==================================================
+ ページレイアウト
+================================================== */
+.container {
+	@include mq(pc) {
+		@include minWidth;
+	}
+}
+
+// ※使用時は削除してください。
+.main {
+	height: 480px;
+}

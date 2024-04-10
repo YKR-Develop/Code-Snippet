@@ -1,0 +1,610 @@
+@charset "UTF-8";
+/* ==================================================
+ style.scss
+ 各scssファイルを定義
+================================================== */
+/* ==================================================
+ baseフォルダ
+================================================== */
+/* ==================================================
+ _base.scss
+ 全ページ共通のタグスタイル 定義
+================================================== */
+/* ==================================================
+ _variables.scss
+ 変数 定義
+================================================== */
+/* ==================================================
+ カラー変数定義
+================================================== */
+/* ==== サイト基本カラー定義 ==== */
+/* ==== 白黒カラー定義 ==== */
+/* ==== ボタンカラー定義 ==== */
+/* ==== ボーダーカラー定義 ==== */
+/* ==================================================
+ background-imageディレクトリ 変数定義
+================================================== */
+/* ==================================================
+ _font.scss
+ フォント・文字サイズ 定義
+================================================== */
+/* ==================================================
+ _function.scss
+ 関数 定義
+================================================== */
+/* ==================================================
+ _base.scss
+ 全ページ共通のタグスタイル 定義
+================================================== */
+/* ==================================================
+ _mq.scss
+ メディアクエリ 定義
+================================================== */
+/* ==================================================
+ メディアクエリ 基本サイズ
+================================================== */
+/* ==================================================
+ メディアクエリ mixin定義
+ ※以下は定義方法
+.class {
+ width: 50%;
+ @include tab {
+		width: 100%
+ }
+}
+================================================== */
+/* ==================================================
+ デバイス非表示・表示
+================================================== */
+.is-pc {
+  display: none;
+}
+
+.is-tab {
+  display: none;
+}
+
+.is-sp {
+  display: none;
+}
+
+/* ==================================================
+ _base.scss
+ 全ページ共通のタグスタイル 定義
+================================================== */
+/* ==================================================
+ フォントのvw単位計算
+ ※定義方法
+ p {
+	font-size: responsiveFontSizeClamp(最小フォントサイズ,最大フォントサイズ,最小ウィンドウサイズ,最大ウィンドウサイズ);
+ }
+================================================== */
+/* ==================================================
+ _base.scss
+ 全ページ共通のタグスタイル 定義
+================================================== */
+/* ==================================================
+ 見出しフォントサイズ(spサイズ ~ pcサイズ)
+ h1: 24 ~ 28px;
+ h2: 20 ~ 24px;
+ h3: 18 ~ 20px;
+ h4: 16 ~ 18px;
+================================================== */
+/* ==================================================
+ フォントサイズ(spサイズ ~ pcサイズ)
+ x-small: 10 ~ 12px
+ small: 12 ~ 14px
+ medium: 14px ~ 16px
+ large: 16px ~ 18px
+ x-large: 18 ~ 20px 
+================================================== */
+/* ==================================================
+ _function.scss
+ 関数 定義
+================================================== */
+/* ==================================================
+ _base.scss
+ 全ページ共通のタグスタイル 定義
+================================================== */
+/* ==================================================
+ _font.scss
+ フォント・文字サイズ 定義
+================================================== */
+/* ==================================================
+ _function.scss
+ 関数 定義
+================================================== */
+/* ==================================================
+ _mixin.scss
+ mixinスタイル 定義
+================================================== */
+/* ==================================================
+ _base.scss
+ 全ページ共通のタグスタイル 定義
+================================================== */
+/* ==================================================
+ _font.scss
+ フォント・文字サイズ 定義
+================================================== */
+/* ==================================================
+ _animation.scss
+ アニメーションスタイル 定義
+================================================== */
+/* ==================================================
+ animation基本設定
+================================================== */
+/* ==================================================
+ ※以下は他scssファイルでの定義方法
+ @mixinで定義した引数のプロパティを書き換えるだけで個別にアニメーションを指定することができる
+ @include bounce(
+    $name: sk-bouncedelay;
+		$duration: 3s;
+		$timing-function: ease-in-out,
+  );
+================================================== */
+/* ==================================================
+ 画面最大幅（PC画面をレスポンシブ対応させないための横幅）
+================================================== */
+/* ==================================================
+ コンテンツ最大幅
+================================================== */
+/* ==================================================
+ 内部コンテンツ幅
+================================================== */
+/* ==================================================
+ タグ共通設定
+================================================== */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  overflow: hidden;
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  line-height: 1.5;
+  letter-spacing: 0.1;
+  color: #ccc;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==================================================
+ ページレイアウト
+================================================== */
+@media screen and (min-width: 1025px) {
+  .container {
+    min-width: 1400px;
+  }
+}
+
+.main {
+  height: 480px;
+}
+
+/* ==================================================
+ _reset.scss
+ リセットcss
+================================================== */
+/*! destyle.css v4.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.min.css */
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+p, table, blockquote, address, pre, iframe, form, figure, dl {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-left: 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  border-top-width: 1px;
+  margin: 0;
+  clear: both;
+  color: inherit;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: inherit;
+}
+
+address {
+  font-style: inherit;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: inherit;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+svg, img, embed, object, iframe {
+  vertical-align: bottom;
+}
+
+button, input, optgroup, select, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  text-align: inherit;
+  text-transform: inherit;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+  cursor: pointer;
+}
+
+button:disabled, [type=button]:disabled, [type=reset]:disabled, [type=submit]:disabled {
+  cursor: default;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+select:disabled {
+  opacity: inherit;
+}
+
+option {
+  padding: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+[type=number] {
+  -moz-appearance: textfield;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+[contenteditable]:focus {
+  outline: auto;
+}
+
+table {
+  border-color: inherit;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+}
+
+td, th {
+  vertical-align: top;
+  padding: 0;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+}
+
+/* ==================================================
+ pageフォルダ
+================================================== */
+/* ==================================================
+ _top.scss
+ TOPページのスタイル定義
+================================================== */
+/* ==================================================
+ _about.scss
+ Aboutページのスタイル定義
+================================================== */
+/* ==================================================
+ mixinフォルダ
+================================================== */
+/* ==================================================
+ configフォルダ
+================================================== */
+/*
+@use "config/setting";
+*/
+/* ==================================================
+ moduleフォルダ
+================================================== */
+/* ==================================================
+ _header.scss
+ ヘッダーのスタイル定義
+================================================== */
+/* ==================================================
+ ヘッダー
+================================================== */
+.header {
+  height: 72px;
+  line-height: 72px;
+  background-color: black;
+  color: #fff;
+}
+.header__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.header__logo {
+  font-size: clamp(1.5rem, 1.417rem + 0.42vw, 1.75rem);
+  font-weight: 24px;
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 0 32px;
+  }
+  .header__inner {
+    position: relative;
+  }
+  .header__hamburger {
+    width: 48px;
+    height: 100%;
+  }
+  .header__hamburger--border {
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    position: relative;
+    transition: ease 0.4s;
+    display: block;
+  }
+  .header__hamburger--border:nth-child(1) {
+    top: 0;
+  }
+  .header__hamburger--border:nth-child(2) {
+    margin: 8px 0;
+  }
+  .header__hamburger--border:nth-child(3) {
+    top: 0;
+  }
+  .header__hamburger.active .header__hamburger--border:nth-child(1) {
+    top: 5px;
+    transform: rotate(45deg);
+  }
+  .header__hamburger.active .header__hamburger--border:nth-child(2) {
+    opacity: 0;
+  }
+  .header__hamburger.active .header__hamburger--border:nth-child(3) {
+    top: -13px;
+    transform: rotate(-45deg);
+  }
+  .header .hamburger {
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 999;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 0 16px;
+  }
+}
+
+/* ==================================================
+ _footer.scss
+ フッターのスタイル定義
+================================================== */
+/* ==================================================
+ グローバルフッター
+================================================== */
+.footer {
+  background: black;
+  color: #fff;
+}
+.footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 0;
+}
+.footer__logo {
+  text-align: center;
+  font-size: clamp(1.5rem, 1.417rem + 0.42vw, 1.75rem);
+  margin-bottom: 32px;
+}
+.footer__copyright {
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding: 0 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 0 16px;
+  }
+}
+
+.footer-nav {
+  margin-bottom: 32px;
+}
+.footer-nav__list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* ==================================================
+ _global-nav.scss
+ グローバルナビゲーションのスタイル定義
+================================================== */
+.global-nav__list {
+  display: flex;
+  gap: 24px;
+}
+@media screen and (max-width: 1024px) {
+  .global-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    background-color: #fff;
+    transition: ease 0.4s;
+  }
+  .global-nav.active {
+    transform: translateX(0);
+  }
+}
+
+/* 
+@use "module/sidenav";
+*/
+/* ==================================================
+ componentフォルダ
+================================================== */
+/* ==================================================
+ _button.scss
+ ボタンのスタイル定義
+================================================== */
+/*
+@use "component/table";
+@use "component/link";
+@use "component/description";
+@use "component/card";
+@use "component/blog-card";
+*//*# sourceMappingURL=style.css.map */

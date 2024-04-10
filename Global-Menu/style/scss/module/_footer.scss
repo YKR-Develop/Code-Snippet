@@ -1,0 +1,48 @@
+/* ==================================================
+ _footer.scss
+ フッターのスタイル定義
+================================================== */
+@use "../config/variables" as *;
+@use "../config/font" as *;
+@use "../config/mq" as *;
+@use "../mixin/mixin" as *;
+
+/* ==================================================
+ グローバルフッター
+================================================== */
+.footer {
+  background: $color_main;
+  color: $color_white;
+
+  &__inner {
+    @include maxWidth;
+    padding: 64px 0;
+  }
+
+  &__logo {
+    text-align: center;
+    font-size: $font_h1;
+    margin-bottom: 32px;
+  }
+
+  &__copyright {
+    text-align: center;
+  }
+
+  @include mq(tab) {
+    padding: 0 32px;
+  }
+
+  @include mq(sp) {
+    padding: 0 16px;
+  }
+}
+
+.footer-nav {
+  margin-bottom: 32px;
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+}

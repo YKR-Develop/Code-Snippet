@@ -1,0 +1,31 @@
+/* ==================================================
+ _global-nav.scss
+ グローバルナビゲーションのスタイル定義
+================================================== */
+@use "../config/variables" as *;
+@use "../config/font" as *;
+@use "../config/mq" as *;
+@use "../mixin/mixin" as *;
+
+.global-nav {
+  &__list {
+    display: flex;
+    gap: 24px;
+  }
+
+  @include mq(tab) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    background-color: #fff;
+    transition: ease 0.4s;
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
