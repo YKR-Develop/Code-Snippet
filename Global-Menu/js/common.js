@@ -36,14 +36,13 @@ includeFooter.send();
 /* ==================================================
  ハンバーガーメニューを表示
 ================================================== */
-document.addEventListener("DOMContentLoaded", () => {
-  // 定数hamburgerにHTML(document)から取得してきた#js-hamburgerを代入
-  const hamburger = document.querySelector('#js-hamburger');
+// 「window.addEventListener('load'」により最初に情報を全て取得してから以降の処理を行うことができる
+window.addEventListener('load', () => {
 
-  // 定数globalNavにHTML(document)から取得してきた#js-navを代入
-  const globalNav = document.querySelector('#js-nav');
-
-  hamburger.addEventListener('click', function () {
-    globalNav.classList.toggle("is-active");
+  document.querySelector('#js-hamburger').addEventListener('click', function(){
+    this.classList.toggle('is-active');
+    document.querySelector('#js-nav').classList.toggle('is-active');
+    document.querySelector('.header-hamburger__text').classList.toggle('is-active');
+    
   });
 });

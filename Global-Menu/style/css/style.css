@@ -194,12 +194,6 @@ a {
 /* ==================================================
  ページレイアウト
 ================================================== */
-@media screen and (min-width: 1025px) {
-  .container {
-    min-width: 1400px;
-  }
-}
-
 .main {
   height: 480px;
 }
@@ -455,70 +449,97 @@ th {
  ヘッダー
 ================================================== */
 .header {
+  width: 100%;
   height: 72px;
-  line-height: 72px;
-  background-color: black;
+  background-color: #000;
+  z-index: 999;
+  position: fixed;
   color: #fff;
+  display: block;
 }
 .header__inner {
   max-width: 1280px;
   margin: 0 auto;
+  height: 72px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
 }
 .header__logo {
-  font-size: clamp(1.5rem, 1.417rem + 0.42vw, 1.75rem);
-  font-weight: 24px;
+  font-size: 24px;
 }
 @media screen and (max-width: 1024px) {
-  .header {
-    padding: 0 32px;
-  }
   .header__inner {
-    position: relative;
-  }
-  .header__hamburger {
-    width: 48px;
-    height: 100%;
-  }
-  .header__hamburger--border {
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-    position: relative;
-    transition: ease 0.4s;
-    display: block;
-  }
-  .header__hamburger--border:nth-child(1) {
-    top: 0;
-  }
-  .header__hamburger--border:nth-child(2) {
-    margin: 8px 0;
-  }
-  .header__hamburger--border:nth-child(3) {
-    top: 0;
-  }
-  .header__hamburger.active .header__hamburger--border:nth-child(1) {
-    top: 5px;
-    transform: rotate(45deg);
-  }
-  .header__hamburger.active .header__hamburger--border:nth-child(2) {
-    opacity: 0;
-  }
-  .header__hamburger.active .header__hamburger--border:nth-child(3) {
-    top: -13px;
-    transform: rotate(-45deg);
-  }
-  .header .hamburger {
-    background-color: transparent;
-    border-color: transparent;
-    z-index: 999;
+    padding: 0 32px;
+    align-items: center;
   }
 }
 @media screen and (max-width: 767px) {
-  .header {
+  .header__inner {
     padding: 0 16px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .header-hamburger {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header-hamburger {
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    margin-left: auto;
+    right: 16px;
+    height: 56px;
+    width: 48px;
+  }
+  .header-hamburger__border {
+    position: absolute;
+    left: 16px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all ease 0.5s;
+  }
+  .header-hamburger__border:nth-of-type(1) {
+    top: 8px;
+  }
+  .header-hamburger__border:nth-of-type(2) {
+    top: 18px;
+  }
+  .header-hamburger__border:nth-of-type(3) {
+    top: 28px;
+  }
+  .header-hamburger__text {
+    display: block;
+    position: absolute;
+    font-size: 12px;
+    top: 40px;
+    left: 45%;
+    font-weight: 600;
+  }
+  .header-hamburger__text::before {
+    content: "Menu";
+  }
+  .header-hamburger__text.is-active::before {
+    content: "Close";
+  }
+  .header-hamburger.is-active .header-hamburger__border {
+    width: 40px;
+    left: 45%;
+  }
+  .header-hamburger.is-active .header-hamburger__border:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .header-hamburger.is-active .header-hamburger__border:nth-of-type(2) {
+    opacity: 0;
+  }
+  .header-hamburger.is-active .header-hamburger__border:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 20px;
   }
 }
 
@@ -567,26 +588,33 @@ th {
 }
 
 /* ==================================================
- _global-nav.scss
+ _gnav.scss
  グローバルナビゲーションのスタイル定義
 ================================================== */
-.global-nav__list {
+.gnav {
+  margin-left: auto;
+}
+.gnav__list {
   display: flex;
-  gap: 24px;
+  gap: 32px;
 }
 @media screen and (max-width: 1024px) {
-  .global-nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+  .gnav {
+    transition: all 0.5s ease;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100vh;
+    left: 0;
+    top: 72px;
     transform: translateX(100%);
-    background-color: #fff;
-    transition: ease 0.4s;
   }
-  .global-nav.active {
+  .gnav__list {
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+  }
+  .gnav.is-active {
     transform: translateX(0);
   }
 }
